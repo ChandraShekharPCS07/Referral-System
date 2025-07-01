@@ -1,0 +1,205 @@
+{
+  "info": {
+    "_postman_id": "e5df72b1-0000-4000-a000-000000000000",
+    "name": "Referral System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for testing the Referral System Modular Monolith."
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users/register?email={{email}}&password={{password}}&referralCode={{referralCode}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "users", "register"],
+              "query": [
+                { "key": "email", "value": "{{email}}" },
+                { "key": "password", "value": "{{password}}" },
+                { "key": "referralCode", "value": "{{referralCode}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "users", "{{userId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Referral",
+      "item": [
+        {
+          "name": "Get Referrals by Inviter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/referrals/inviter/{{inviterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "referrals", "inviter", "{{inviterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Referrals by Invitee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/referrals/invitee/{{inviteeId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "referrals", "invitee", "{{inviteeId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reward",
+      "item": [
+        {
+          "name": "Get Rewards for User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/rewards/user/{{userId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "rewards", "user", "{{userId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Get Reward Amount",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/admin/reward-amount",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "admin", "reward-amount"]
+            }
+          }
+        },
+        {
+          "name": "Set Reward Amount",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/admin/reward-amount?amount={{amount}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "admin", "reward-amount"],
+              "query": [{ "key": "amount", "value": "{{amount}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Campaign Enabled",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/admin/campaign-enabled",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "admin", "campaign-enabled"]
+            }
+          }
+        },
+        {
+          "name": "Set Campaign Enabled",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/admin/campaign-enabled?enabled={{enabled}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "admin", "campaign-enabled"],
+              "query": [{ "key": "enabled", "value": "{{enabled}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Get Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/analytics/summary",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "analytics", "summary"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "item": [
+        {
+          "name": "Send Test Notification",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/notifications/send-test?userId={{userId}}&amount={{amount}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "notifications", "send-test"],
+              "query": [
+                { "key": "userId", "value": "{{userId}}" },
+                { "key": "amount", "value": "{{amount}}" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
